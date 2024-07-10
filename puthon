@@ -1,0 +1,17 @@
+def get_total_cost(floors_count, delta, flat_cost):
+    total_cost = 0
+    current_cost = flat_cost
+
+    for floor in range(1, floors_count + 1):
+        total_cost += current_cost
+
+        if floor % delta == 0:
+            current_cost += 1000
+
+    return total_cost
+    
+#Цикл по этажам:
+
+Мы проходим по всем этажам от 1 до floors_count (включительно).
+На каждом этаже добавляем current_cost к total_cost.
+Если номер текущего этажа (floor) делится на delta без остатка, то увеличиваем current_cost на 1000.
